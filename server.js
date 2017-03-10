@@ -12,18 +12,18 @@ app.set("view engine", "ejs");
 
 
 app.get('/', function (request, response){
-	var survey = [];
-	response.render('index', {index: survey});
+	// var survey = [];
+	response.render('index');
 });
 
 app.post('/survey', function (request, response){
-	var survey = {
+	var survey_info = {
 		name: request.body.name,
 		location: request.body.location,
 		language: request.body.language,
 		comment: request.body.comment
 	};
-	response.render('survey', {survey: survey});
+	response.render('survey', {survey: survey_info});
 	
 	console.log('POST DATA \n\n', request.body);
 	
